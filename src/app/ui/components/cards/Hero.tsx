@@ -22,7 +22,7 @@ export default function Hero({ value }: HeroProps) {
           <p className="py-6">{value.description}</p>
           <Link
             href={"/product/" + value.id}
-            className="btn btn-primary size-fit"
+            className="btn btn-primary size-fit text-base"
           >
             Voir le produit
           </Link>

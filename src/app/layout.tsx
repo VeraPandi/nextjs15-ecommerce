@@ -1,6 +1,6 @@
 import { inter } from "@/app/ui/fonts";
 import "@/app/ui/globals.css";
-import type { Metadata } from "next";
+import { Metadata } from "next";
 import Footer from "./ui/components/Footer";
 import Navbar from "./ui/components/Navbar";
 
@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body className={`${inter.className}`}>
+      <body className={`${inter.className} flex min-h-screen flex-col`}>
         <Navbar />
         {children}
         <Footer />

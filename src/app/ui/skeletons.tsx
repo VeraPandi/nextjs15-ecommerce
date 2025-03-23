@@ -1,3 +1,7 @@
+interface HomePageSkeletonProps {
+  currentPage: number;
+}
+
 export function HeroSkeleton() {
   return (
     <section className="animate-pulse">
@@ -40,5 +44,17 @@ export function CardsSkeleton() {
       <CardSkeleton />
       <CardSkeleton />
     </>
+  );
+}
+
+export function HomePageSkeleton({ currentPage }: HomePageSkeletonProps) {
+  return (
+    <main className="grow p-4 text-base md:flex md:flex-col md:justify-between lg:m-auto lg:w-full lg:max-w-[90vw] ">
+      {currentPage === 1 ? <HeroSkeleton /> : null}
+
+      <section className="grid grid-cols-1 gap-5 md:grid md:grid-cols-2 xl:grid-cols-3">
+        <CardsSkeleton />
+      </section>
+    </main>
   );
 }

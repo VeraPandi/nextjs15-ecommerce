@@ -8,6 +8,9 @@ interface CardProps {
 }
 
 export function Card({ value }: CardProps) {
+  const newRelease =
+    Date.now() - new Date(value.createdAt).getTime() < 1000 * 60 * 60 * 24 * 7;
+
   return (
     <Link
       href={"/product/" + value.id}
@@ -26,9 +29,17 @@ export function Card({ value }: CardProps) {
 
       <div className="card-body">
         <h2 className="card-title">{value.name}</h2>
+        {newRelease ? (
+          <div className="badge badge-info h-auto">Nouveau</div>
+        ) : null}
         <p>{value.description}</p>
         <div className="card-actions pt-1">
-          <div className="badge border-gray-200">{value.price}</div>
+          <div className="badge border-gray-200">
+            {value.price.toLocaleString("fr", {
+              style: "currency",
+              currency: "EUR",
+            })}
+          </div>
         </div>
       </div>
     </Link>

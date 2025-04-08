@@ -14,6 +14,7 @@ const config: Config = {
         lightTheme: {
           primary: "#f4aa3a",
           secondary: "#272136",
+          info: "#f4f4a1",
           "base-100": "#ffffff",
           "base-300": "#d4d4d4",
           body: {

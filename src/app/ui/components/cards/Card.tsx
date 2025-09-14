@@ -22,7 +22,7 @@ export function Card({ value }: CardProps) {
           src={value.imageUrl}
           width={1000}
           height={760}
-          className="h-48 rounded-lg object-cover shadow-2xl"
+          className="h-48 object-cover shadow-2xl"
           alt={value.name}
         />
       </figure>

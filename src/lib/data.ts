@@ -25,6 +25,17 @@ export async function fetchProducts(
   }
 }
 
+export async function fetchProductById(id: string) {
+  try {
+    const product = await prisma.product.findUnique({ where: { id } });
+
+    return product;
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error('Failed to fetch "product by ID" data');
+  }
+}
+
 export async function fetchFilteredProducts(query: string) {
   try {
     const products = await prisma.product.findMany({
